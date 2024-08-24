@@ -1,7 +1,7 @@
-import ReactDOM from "react-dom";
-import React from "react";
+import ReactDOM from 'react-dom';
+import React from 'react';
 
-const root = ReactDOM.createRoot(document.getElementById("app"));
+const root = ReactDOM.createRoot(document.getElementById('app'));
 
 root.render(
   <React.StrictMode>
@@ -9,5 +9,6 @@ root.render(
       <GlobalStyle /> */}
     <RouterProvider router={router} fallbackElement={<div>Loading...</div>} />
     {/* </ThemeProvider> */}
-  </React.StrictMode>
+    하이하이방글라데시 akdka
+  </React.StrictMode>,
 );
