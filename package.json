@@ -1,5 +1,5 @@
 {
-  "name": "ntelecom-project",
+  "name": "mellow-project",
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
@@ -11,7 +11,8 @@
     "react-dom": "18.0.0",
     "react-router-dom": "^6.24.0",
     "styled-components": "^6.1.11",
-    "styled-reset": "^4.5.2"
+    "styled-reset": "^4.5.2",
+    "yarn": "^1.22.22"
   },
   "scripts": {
     "build": "webpack build --config ./webpack.config.js",
