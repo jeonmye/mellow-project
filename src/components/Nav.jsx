@@ -19,10 +19,13 @@ import Container from '@mui/material/Container';
 import LogoImg from '../assets/images/logo/logo.png';
 import NAV_LIST from '../constant/navList';
 import useViewport from '../hooks/useViewPort';
+import { flexbox } from '@mui/system';
 
 const Logo = styled.img`
-  width: ${props => (props.$isMobile ? '90px' : '160px')};
+  width: ${props => (props.$isMobile ? '90px' : '170px')};
+  transform: scale(1.2);
   height: 100%;
+
   cursor: pointer;
 `;
 
@@ -56,6 +59,13 @@ const DrawerAppBar = props => {
     setDropdownOpen(false);
   };
 
+  const NavHeader = styled.div`
+    display: flex;
+    gap: 24px;
+    padding-left: 43px;
+    font-size: 12px;
+  `;
+
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" href="/" sx={{ my: 2, cursor: 'pointer' }} onClick={() => navigate('/')}>
@@ -66,7 +76,7 @@ const DrawerAppBar = props => {
       <List>
         {NAV_LIST.map(item => (
           <ListItem key={item.label} disablePadding>
-            <ListItemButton href={item.path} sx={{ textAlign: 'center' }}>
+            <ListItemButton href={item.path}>
               <ListItemText primary={item.label} />
             </ListItemButton>
           </ListItem>
@@ -79,15 +89,18 @@ const DrawerAppBar = props => {
 
   // Inside the DrawerAppBar component
   return (
-    <Box sx={{ display: 'flex', height: 'auto', zIndex: 2 }}>
-      {' '}
-      {/* Adjust zIndex here */}
+    <Box sx={{ display: 'flex', height: 'auto', zIndex: 2, zIndex: 999 }}>
       <AppBar
         component="nav"
-        position="fixed" // Change to fixed
-        sx={{ bgcolor: 'inherit', boxShadow: 'none', zIndex: 2 }} // Increase z-index
+        // position="fixed"
+        sx={{ bgcolor: 'inherit', boxShadow: 'none', zIndex: 2, margin: '32px 0' }} // Increase z-index
       >
         <Container maxWidth="lg">
+          <NavHeader>
+            <span>제작문의</span>
+            <span>TEL : 000.000.0000</span>
+            <span>E-MAIL : mov@mellow.mov</span>
+          </NavHeader>
           <Toolbar>
             <IconButton
               color="black"
@@ -98,7 +111,7 @@ const DrawerAppBar = props => {
             >
               <MenuIcon />
             </IconButton>
-            <Logo $isMobile={isMobile} src={LogoImg} alt="mello" onClick={() => navigate('/')} />
+            <Logo $isMobile={isMobile} src={LogoImg} alt="mellow" onClick={() => navigate('/')} />
             <Typography
               component="div"
               sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' }, alignItems: 'center', justifyContent: 'start' }}
@@ -137,7 +150,7 @@ const DrawerAppBar = props => {
                   </DropdownMenu> */}
                   </Box>
                 ) : (
-                  <Button key={item.label} onClick={() => navigate(item.path)} sx={{ color: 'black', mx: 2 }}>
+                  <Button key={item.label} onClick={() => navigate(item.path)} sx={{ color: 'white', mx: 2 }}>
                     {item.label}
                   </Button>
                 ),

@@ -35,6 +35,17 @@ module.exports = {
         },
       },
       {
+        test: /\.(mov|mp4)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+            },
+          },
+        ],
+      },
+      {
         test: /\.(jpg|jpeg|gif|png|svg|eot|woff|ttf)$/i,
         type: 'asset/resource',
       },

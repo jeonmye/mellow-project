@@ -9,21 +9,14 @@ const LayoutWrapper = styled.div`
   flex-direction: column;
 `;
 const Content = styled.div`
-  padding: ${props => (props.$pathname == '/' ? 'none' : '32px')};
+  /* padding: ${props => (props.$pathname == '/' ? 'none' : '32px')}; */
   display: flex;
   flex-direction: column;
-  max-width: 1200px;
   width: 100%;
   margin: auto;
+  max-width: ${props => (props.$pathname == '/' ? 'none' : '1200px')};
 `;
-const KakaoChatImg = styled.img`
-  position: fixed;
-  z-index: 999;
-  right: 20px;
-  bottom: 20px;
-  width: '72px';
-  height: '72px';
-`;
+
 const Layout = () => {
   const { pathname } = useLocation();
   return (
