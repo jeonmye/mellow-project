@@ -26,15 +26,15 @@ const Logo = styled.img`
   cursor: pointer;
 `;
 
-const DropdownMenu = styled.div`
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: white;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
-  display: ${props => (props.open ? 'block' : 'none')};
-  z-index: 1000;
-`;
+// const DropdownMenu = styled.div`
+//   position: absolute;
+//   top: 100%;
+//   left: 0;
+//   background: white;
+//   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+//   display: ${props => (props.open ? 'block' : 'none')};
+//   z-index: 1000;
+// `;
 
 const DrawerAppBar = props => {
   const navigate = useNavigate();
@@ -59,7 +59,7 @@ const DrawerAppBar = props => {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" href="/" sx={{ my: 2, cursor: 'pointer' }} onClick={() => navigate('/')}>
-        앤텔레콤
+        Mellow
       </Typography>
 
       <Divider />
@@ -77,15 +77,18 @@ const DrawerAppBar = props => {
 
   const container = window !== undefined ? () => window().document.body : undefined;
 
+  // Inside the DrawerAppBar component
   return (
-    <Box justifyContent="center" sx={{ display: 'flex', bgcolor: 'white', height: 'auto' }}>
+    <Box sx={{ display: 'flex', height: 'auto', zIndex: 2 }}>
+      {' '}
+      {/* Adjust zIndex here */}
       <AppBar
         component="nav"
-        position="static"
-        sx={{ bgcolor: '#fff', boxShadow: 'none', borderBottom: '1px solid #e0e0e0' }}
+        position="fixed" // Change to fixed
+        sx={{ bgcolor: 'inherit', boxShadow: 'none', zIndex: 2 }} // Increase z-index
       >
-        <Container maxWidth="lg" height="100%">
-          <Toolbar height="100%">
+        <Container maxWidth="lg">
+          <Toolbar>
             <IconButton
               color="black"
               aria-label="open drawer"
@@ -95,7 +98,7 @@ const DrawerAppBar = props => {
             >
               <MenuIcon />
             </IconButton>
-            <Logo $isMobile={isMobile} src={LogoImg} alt="앤텔레콤" onClick={() => navigate('/')} />
+            <Logo $isMobile={isMobile} src={LogoImg} alt="mello" onClick={() => navigate('/')} />
             <Typography
               component="div"
               sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' }, alignItems: 'center', justifyContent: 'start' }}
@@ -113,24 +116,25 @@ const DrawerAppBar = props => {
                     <Button sx={{ color: 'black', mx: 2 }} onClick={() => handleNavigate(item.path)}>
                       {item.label}
                     </Button>
-                    <DropdownMenu open={dropdownOpen}>
-                      {item.dropdown.map(subItem => (
-                        <Button
-                          key={subItem.label}
-                          onClick={() => handleNavigate(subItem.path)}
-                          sx={{
-                            display: 'block',
-                            width: '100%',
-                            textAlign: 'left',
-                            color: 'grey',
-                            padding: '8px 12px',
-                            fontSize: 13,
-                          }}
-                        >
-                          {subItem.label}
-                        </Button>
-                      ))}
-                    </DropdownMenu>
+
+                    {/* <DropdownMenu open={dropdownOpen}>
+                    {item.dropdown.map(subItem => (
+                      <Button
+                        key={subItem.label}
+                        onClick={() => handleNavigate(subItem.path)}
+                        sx={{
+                          display: 'block',
+                          width: '100%',
+                          textAlign: 'left',
+                          color: 'grey',
+                          padding: '8px 12px',
+                          fontSize: 13,
+                        }}
+                      >
+                        {subItem.label}
+                      </Button>
+                    ))}
+                  </DropdownMenu> */}
                   </Box>
                 ) : (
                   <Button key={item.label} onClick={() => navigate(item.path)} sx={{ color: 'black', mx: 2 }}>
@@ -142,7 +146,6 @@ const DrawerAppBar = props => {
           </Toolbar>
         </Container>
       </AppBar>
-
       <nav>
         <Drawer
           container={container}
