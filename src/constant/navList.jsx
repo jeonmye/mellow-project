@@ -3,7 +3,7 @@ const NAV_LIST = [
   { label: 'HOME', path: '/' },
   {
     label: 'PORTFOLIO',
-    path: '/protfolio',
+    path: '/portfolio',
     // dropdown: [
     //   { label: 'K망 개통방법', path: '/activation-method/KT' },
     //   { label: 'L망 개통방법', path: '/activation-method/LG' },

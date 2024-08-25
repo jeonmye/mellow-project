@@ -15,7 +15,7 @@ const Content = styled.div`
   width: 100%;
   /* height: 100vh; */
   /* margin: auto; */
-  max-width: ${props => (props.$pathname == '/' ? 'none' : '1200px')};
+  max-width: 'none'
 `;
 
 const Layout = () => {
