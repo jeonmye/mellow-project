@@ -26,7 +26,7 @@ const Layout = () => {
       <Content $pathname={pathname}>
         <Outlet />
       </Content>
-      <Footer />
+      {/* <Footer /> */}
     </LayoutWrapper>
   );
 };
