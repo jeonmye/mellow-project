@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import useViewport from '../hooks/useViewPort';
 import banner from '../assets/videos/banner-video.mp4';
+import { useNavigate } from 'react-router';
 
 const Container = styled.div`
   display: flex;
@@ -96,6 +97,7 @@ const IconBox = styled.div`
   align-items: center;
   gap: 12px;
   margin: auto;
+  cursor: pointer;
 `;
 
 const Circle = styled.div`
@@ -128,6 +130,7 @@ const ICON_LIST = [
 const Main = () => {
   const { isMobile } = useViewport();
   const ref = useRef();
+  const navigate = useNavigate();
   const [autoplay, setAutoplay] = useState();
 
   // const addPlaying = () => {
@@ -171,7 +174,7 @@ const Main = () => {
             <SectionTitle>BUSINESS AREA</SectionTitle>
             <IconContainer>
               {ICON_LIST.map(item => (
-                <IconBox>
+                <IconBox onClick={() => navigate('/portfolio')}>
                   <Circle>
                     <Icon src={item.src} alt={item.alt} $text={item.text}></Icon>
                   </Circle>

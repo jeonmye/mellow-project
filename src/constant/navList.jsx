@@ -1,6 +1,6 @@
 const NAV_LIST = [
-  { label: 'ABOUT', path: '/about' },
-  { label: 'HOME', path: '/' },
+  { label: 'ABOUT', path: '/portfolio' },
+  { label: 'HOME', path: '/portfolio' },
   {
     label: 'PORTFOLIO',
     path: '/portfolio',
@@ -9,7 +9,7 @@ const NAV_LIST = [
     //   { label: 'L망 개통방법', path: '/activation-method/LG' },
     // ],
   },
-  { label: 'CONTACT', path: '/contact' },
+  { label: 'CONTACT', path: '/portfolio' },
 ];
 
 export default NAV_LIST;
