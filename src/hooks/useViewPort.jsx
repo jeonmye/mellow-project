@@ -4,6 +4,7 @@ function useViewport() {
   const [width, setWidth] = useState(window.innerWidth);
   const [height, setHeight] = useState(window.innerHeight);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 600 || window.outerWidth <= 600);
+  const [isDesktop, setDesktop] = useState(window.innerWidth <= 1024 || window.outerWidth <= 1024);
   const [isLoaded, setIsLoaded] = useState(false);
 
   const handleResize = () => {

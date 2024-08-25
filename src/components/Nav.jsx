@@ -25,7 +25,6 @@ const Logo = styled.img`
   width: ${props => (props.$isMobile ? '90px' : '170px')};
   transform: scale(1.2);
   height: 100%;
-
   cursor: pointer;
 `;
 
@@ -87,14 +86,9 @@ const DrawerAppBar = props => {
 
   const container = window !== undefined ? () => window().document.body : undefined;
 
-  // Inside the DrawerAppBar component
   return (
-    <Box sx={{ display: 'flex', height: 'auto', zIndex: 2, zIndex: 999 }}>
-      <AppBar
-        component="nav"
-        // position="fixed"
-        sx={{ bgcolor: 'inherit', boxShadow: 'none', zIndex: 2, margin: '32px 0' }} // Increase z-index
-      >
+    <Box sx={{ display: 'flex', height: 'auto', position: 'relative' }}>
+      <AppBar component="nav" position="absolute" color="transparent" sx={{ boxShadow: 'none', margin: '32px 0' }}>
         <Container maxWidth="lg">
           <NavHeader>
             <span>제작문의</span>
