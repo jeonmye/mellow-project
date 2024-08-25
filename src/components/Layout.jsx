@@ -13,7 +13,8 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin: auto;
+  /* height: 100vh; */
+  /* margin: auto; */
   max-width: ${props => (props.$pathname == '/' ? 'none' : '1200px')};
 `;
 

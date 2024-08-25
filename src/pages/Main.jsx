@@ -1,13 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import useViewport from '../hooks/useViewPort';
-// import banner from '../assets/videos/banner.mp4';
+import banner from '../assets/videos/banner-video.mp4';
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: ${props => (props.$isMobile ? '100%' : '100vh')};
 `;
 
 const Banner = styled.div`
@@ -20,11 +19,9 @@ const Banner = styled.div`
 
 const Video = styled.div`
   width: 100vw;
-  height: 600px;
-  /* TODO 동영상 링크 넣은 후 height 를 auto로 변경 */
-  /* height: auto; */
+  height: 1000px;
+  height: auto;
   position: relative;
-  background-color: green;
 `;
 
 const Wrap = styled.div`
@@ -131,7 +128,6 @@ const ICON_LIST = [
 const Main = () => {
   const { isMobile } = useViewport();
   const ref = useRef();
-
   const [autoplay, setAutoplay] = useState();
 
   // const addPlaying = () => {
@@ -152,11 +148,9 @@ const Main = () => {
       <Container $isMobile={isMobile}>
         <Banner>
           <Video>
-            {/* TODO
-             동영상 링크 넣어야함  */}
-            {/* <video ref={ref} autoPlay loop muted width="100%" height="100%" id="vid">
+            <video ref={ref} autoPlay loop muted width="100%" height="100%">
               <source src={banner} type="video/mp4" />
-            </video> */}
+            </video>
           </Video>
           <Wrap>
             <TitleContainer>
