@@ -11,13 +11,11 @@ const GlobalStyle = styled.createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
-    font-family: 'SDGothic', serif;
+    font-family: 'helveticaNow';
   }
 
   body {
-    font-family: 'HelveticaNow';
-    src: url('..assets/font/HelveticaNowText-black') format('truetype');
-    font-weight: normal;
+    font-family: 'helveticaNow';
   }
 `;
 
