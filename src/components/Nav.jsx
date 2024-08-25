@@ -90,11 +90,11 @@ const DrawerAppBar = props => {
     <Box sx={{ display: 'flex', height: 'auto', position: 'relative' }}>
       <AppBar component="nav" position="absolute" color="transparent" sx={{ boxShadow: 'none', margin: '32px 0' }}>
         <Container maxWidth="lg">
-          <NavHeader>
+          {/* <NavHeader>
             <span>제작문의</span>
             <span>TEL : 000.000.0000</span>
             <span>E-MAIL : mov@mellow.mov</span>
-          </NavHeader>
+          </NavHeader> */}
           <Toolbar>
             <IconButton
               color="black"
