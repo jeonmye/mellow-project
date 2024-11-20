@@ -1,20 +1,13 @@
 import ReactDOM from 'react-dom/client';
 import React from 'react';
 import { RouterProvider } from 'react-router-dom';
-import { ThemeProvider } from 'styled-components';
-import { theme, mixins } from './style/theme';
-import GlobalStyle from './style/GlobalStyle';
-import GlobalFont from './style/GlobalFont';
 import router from './routes/Router';
+import './styles/globals.css'
 
 const root = ReactDOM.createRoot(document.getElementById('app'));
 
 root.render(
   <React.StrictMode>
-    <ThemeProvider theme={{ ...theme, ...mixins }}>
-      <GlobalStyle />
-      <GlobalFont />
       <RouterProvider router={router} fallbackElement={<div>Loading...</div>} />
-    </ThemeProvider>
   </React.StrictMode>,
 );

@@ -1,0 +1,62 @@
+@font-face {
+  font-family: 'Noto Sans KR Black';
+  src:
+    local('NotoSansKR-Black'),
+    url('./NotoSansKR-Black.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Noto Sans KR Bold';
+  src:
+    local('NotoSansKR-Bold'),
+    url('./NotoSansKR-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Noto Sans KR ExtraBold';
+  src:
+    local('NotoSansKR-ExtraBold'),
+    url('./NotoSansKR-ExtraBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Noto Sans KR ExtraLight';
+  src:
+    local('NotoSansKR-ExtraLight'),
+    url('./NotoSansKR-ExtraLight.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Noto Sans KR Light';
+  src:
+    local('NotoSansKR-Light'),
+    url('./NotoSansKR-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Noto Sans KR Medium';
+  src:
+    local('NotoSansKR-Medium'),
+    url('./NotoSansKR-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Noto Sans KR Regular';
+  src:
+    local('NotoSansKR-Regular'),
+    url('./NotoSansKR-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Noto Sans KR SemiBold';
+  src:
+    local('NotoSansKR-SemiBold'),
+    url('./NotoSansKR-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Noto Sans KR Thin';
+  src:
+    local('NotoSansKR-Thin'),
+    url('./NotoSansKR-Thin.ttf') format('truetype');
+}

@@ -52,13 +52,9 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              publicPath: '',
-            },
-          },
+          MiniCssExtractPlugin.loader,
           'css-loader',
+          'postcss-loader', // Tailwind를 처리하기 위해 추가
         ],
       },
     ],
