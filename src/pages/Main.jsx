@@ -1,24 +1,52 @@
 import React from 'react';
 import useViewport from '../hooks/useViewPort';
 import sampleBanner from '../assets/images/sampleBanner.jpg';
+import LB세미콘기술홍보 from '../assets/images/thumbnail/2020LB세미콘기술홍보.png';
+import { Link } from 'react-router-dom';
 
 const Main = () => {
   const { isMobile } = useViewport();
 
+  function splitArrayIntoThree(data) {
+    const result = [[], [], []];
+    data.forEach((item, index) => {
+      result[index % 3].push(item);
+    });
+    return result;
+  }
+
+  const threeArrayThumbnailData = splitArrayIntoThree(data);
   return (
-    <>
-      <div className="w-full h-[600px] overflow-hidden relative ">
+    <div className="w-full">
+      <div className="w-full h-[600px] overflow-hidden relative p-10 md:p-0">
         <img src={sampleBanner} alt="배너" className="w-full h-full object-cover" />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-h1-bold text-white">
-          VMOD by MELLOW
-        </div>
+        <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-h1-bold text-white mx-auto text-h3-bold md:text-h2-bold lg:text-h1-bold">
+          KOICA by MELLOW
+        </span>
       </div>
-      <ThumbnailWrap>
-        {data.map(item => (
-          <img src={item.thumbnail}></img>
+      <div className="flex justify-center w-full gap-20 mt-20">
+        {threeArrayThumbnailData?.map((datas, index) => (
+          <div key={index} className="min-h-screen flex flex-col">
+            {datas.map((item, idx) => {
+              return (
+                <Link to={`/brand-movie/${item.title}`} key={idx} className="group">
+                  <div className="relative flex flex-col w-[280px] max-h-[380px] min-h-[150px] overflow-hidden lg:w-[320px] lg:max-h-[420px] lg:min-h-[180px]">
+                    <img src={item.thumbnail} className="object-cover w-full h-full" />
+                    <div className="absolute inset-0 bg-gray-800 opacity-0 group-hover:opacity-60 transition duration-300 ease-in-out"></div>
+                    <span className="absolute inset-0 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out text-h4-bold tracking-wider">
+                      VIEW POST →
+                    </span>
+                  </div>
+                  <div className="flex my-10 justify-center">
+                    <span className="text-h4-bold text-pretty">{item.title}</span>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
         ))}
-      </ThumbnailWrap>
-    </>
+      </div>
+    </div>
   );
 };
 
@@ -30,24 +58,24 @@ const ThumbnailWrap = ({ children }) => {
 
 const data = [
   {
-    title: '한림대 인터뷰광고 / 홍보',
+    title: '2020 LB세미콘 기술홍보',
     videoSource: 'https://youtu.be/ZKRYNhcIsXg',
-    thumbnail: 'https://picsum.photos/300/300?random=1',
+    thumbnail: LB세미콘기술홍보,
   },
   {
-    title: '안성아양아파트 공기정화 그래픽',
+    title: '안성아양아파트 공기정화',
     videoSource: 'https://youtu.be/JLId6mhnXpQ',
-    thumbnail: 'https://picsum.photos/400/550?random=1',
+    thumbnail: 'https://picsum.photos/300/180?random=1',
   },
   {
     title: 'KOICA 교육영상',
     videoSource: 'https://youtu.be/yzQlxm3fp9I',
-    thumbnail: 'https://picsum.photos/300/400?random=1',
+    thumbnail: 'https://picsum.photos/300/300?random=1',
   },
   {
     title: 'KOICA 교육영상2',
     videoSource: 'https://youtu.be/qDSBf0NnXZo',
-    thumbnail: 'https://picsum.photos/200/300?random=1',
+    thumbnail: 'https://picsum.photos/200/180?random=1',
   },
   {
     title: '조선대 조리영상',
@@ -57,12 +85,12 @@ const data = [
   {
     title: '산사태 안전 영상',
     videoSource: 'https://youtu.be/d4KJK9rnG8E',
-    thumbnail: 'https://picsum.photos/500/330?random=1',
+    thumbnail: 'https://picsum.photos/500/240?random=1',
   },
   {
     title: '건축물 붕괴 안전 영상',
     videoSource: 'https://youtu.be/_GC9w3fbfqg',
-    thumbnail: 'https://picsum.photos/400/800?random=1',
+    thumbnail: 'https://picsum.photos/400/500?random=1',
   },
   {
     title: '서강대학교 전형안내',
@@ -77,7 +105,7 @@ const data = [
   {
     title: '공공의료보건재단',
     videoSource: 'https://youtu.be/QN1Z0KRfUsI',
-    thumbnail: 'https://picsum.photos/450/700?random=1',
+    thumbnail: 'https://picsum.photos/450/400?random=1',
   },
   {
     title: 'KSP 온라인 행사',
@@ -92,7 +120,7 @@ const data = [
   {
     title: 'LS엠트론 홍보영상',
     videoSource: 'https://youtu.be/9DT9pjB75l8',
-    thumbnail: 'https://picsum.photos/450/650?random=1',
+    thumbnail: 'https://picsum.photos/450/550?random=1',
   },
   {
     title: '달걀 모션그래픽',
@@ -142,7 +170,7 @@ const data = [
   {
     title: '삼성화재 모션 매뉴얼',
     videoSource: 'https://youtu.be/wxV4PCF0-4g',
-    thumbnail: 'https://picsum.photos/450/750?random=1',
+    thumbnail: 'https://picsum.photos/450/650?random=1',
   },
   {
     title: 'JUS 캐릭터 모션',
@@ -165,7 +193,7 @@ const data = [
     thumbnail: 'https://picsum.photos/400/400?random=1',
   },
   {
-    title: 'LB세미콘 반도체 후공정 그래픽',
+    title: 'LB세미콘 반도체 후공정',
     videoSource: 'https://youtu.be/FVeujxWSux0',
     thumbnail: 'https://picsum.photos/500/500?random=1',
   },
@@ -177,12 +205,12 @@ const data = [
   {
     title: 'SVC 진공 펌프 부품',
     videoSource: 'https://youtu.be/zMkVzSBI8M0',
-    thumbnail: 'https://picsum.photos/700/800?random=1',
+    thumbnail: 'https://picsum.photos/600/600?random=1',
   },
   {
     title: '동운아나텍 홍보',
     videoSource: 'https://youtu.be/7HO0ZhPkEOo',
-    thumbnail: 'https://picsum.photos/200/600?random=1',
+    thumbnail: 'https://picsum.photos/500/600?random=1',
   },
   {
     title: 'CJ 홍보관 전시영상',
@@ -202,7 +230,7 @@ const data = [
   {
     title: '뉴발란스 키즈 위자드 2018',
     videoSource: 'https://youtu.be/dyroSXfP5K0',
-    thumbnail: 'https://picsum.photos/700/300?random=1',
+    thumbnail: 'https://picsum.photos/600/300?random=1',
   },
   {
     title: '튼튼영어 Tooty ta',

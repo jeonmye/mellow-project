@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
-// import LoadingSpinner from '../components/LoadingSpinner';
+import { Spinner } from '../components/Spinner';
 const Layout = lazy(() => import('../components/Layout'));
 const Main = lazy(() => import('../pages/Main'));
 const BrandMovie = lazy(() => import('../pages/BrandMovie'));
@@ -12,24 +12,24 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: (
-      <Suspense fallback={<p>에러</p>}>
+      <Suspense fallback={<Spinner />}>
         <Layout />
       </Suspense>
     ),
-    errorElement: <p>에러</p>,
+    errorElement: <Spinner />,
     children: [
       {
         index: true,
         element: (
-          <Suspense fallback={<p>에러</p>}>
+          <Suspense fallback={<Spinner />}>
             <Main />
           </Suspense>
         ),
       },
       {
-        path: 'brand-movie',
+        path: 'brand-movie/:id',
         element: (
-          <Suspense fallback={<p>에러</p>}>
+          <Suspense fallback={<Spinner />}>
             <BrandMovie />
           </Suspense>
         ),
@@ -43,7 +43,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: 'new-medi',
+        path: 'new-media',
         element: (
           <Suspense fallback={<p>에러</p>}>
             <NewMedia />

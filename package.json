@@ -4,11 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.2",
     "react": "18.0.0",
     "react-dom": "18.0.0",
     "react-icons": "^5.3.0",
     "react-player": "^2.16.0",
     "react-router-dom": "^6.24.0",
+    "react-spinners": "^0.14.1",
     "yarn": "^1.22.22"
   },
   "scripts": {

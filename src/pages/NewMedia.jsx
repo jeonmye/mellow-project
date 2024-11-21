@@ -1,7 +1,7 @@
 import React from 'react';
 
 const NewMedia = () => {
-  return <></>;
+  return <>NewMedia</>;
 };
 
-export default Character;
+export default NewMedia;

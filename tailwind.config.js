@@ -18,10 +18,10 @@ module.exports = {
         black: '900',
       },
       screens: {
-        sm: { min: '360px' },
-        md: { min: '768px' },
-        lg: { min: '1024px' },
-        xl: { min: '1280px' },
+        sm: { min: '361px' },
+        md: { min: '769px' },
+        lg: { min: '1025px' },
+        xl: { min: '1281px' },
       },
       colors: {
         gray100: '#E8EBED',
@@ -68,5 +68,5 @@ module.exports = {
   variants: {
     backgroundColor: ['hover', 'focus'],
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/aspect-ratio')],
 };
