@@ -563,21 +563,6 @@ video {
 .mb-14 {
   margin-bottom: 3.5rem;
 }
-.mr-7 {
-  margin-right: 1.75rem;
-}
-.mt-20 {
-  margin-top: 5rem;
-}
-.mt-16 {
-  margin-top: 4rem;
-}
-.mt-12 {
-  margin-top: 3rem;
-}
-.mr-6 {
-  margin-right: 1.5rem;
-}
 .mt-10 {
   margin-top: 2.5rem;
 }
@@ -634,9 +619,6 @@ video {
 .flex-col {
   flex-direction: column;
 }
-.flex-wrap {
-  flex-wrap: wrap;
-}
 .items-center {
   align-items: center;
 }
@@ -649,26 +631,11 @@ video {
 .gap-10 {
   gap: 2.5rem;
 }
-.gap-20 {
-  gap: 5rem;
-}
 .gap-4 {
   gap: 1rem;
 }
 .gap-9 {
   gap: 2.25rem;
-}
-.gap-16 {
-  gap: 4rem;
-}
-.gap-12 {
-  gap: 3rem;
-}
-.gap-6 {
-  gap: 1.5rem;
-}
-.gap-5 {
-  gap: 1.25rem;
 }
 .overflow-hidden {
   overflow: hidden;
@@ -705,28 +672,21 @@ video {
   -o-object-position: center;
      object-position: center;
 }
-.p-8 {
-  padding: 2rem;
-}
 .px-5 {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
+}
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
-.px-8 {
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
-}
-.px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
 }
 .text-caption2-extra-bold {
   font-size: 12px;
@@ -753,14 +713,14 @@ video {
   line-height: 110%;
   font-weight: 800;
 }
-.text-xs {
-  font-size: 0.75rem;
-  line-height: 1rem;
-}
 .text-title-bold {
   font-size: 21px;
   line-height: 30px;
   font-weight: 600;
+}
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 .tracking-wide {
   letter-spacing: 0.025em;
@@ -893,12 +853,6 @@ section {
     line-height: 110%;
     font-weight: 800;
   }
-
-  .md\:text-h3-bold {
-    font-size: 32px;
-    line-height: 110%;
-    font-weight: 800;
-  }
 }
 
 @media (min-width: 1025px) {
@@ -908,40 +862,32 @@ section {
     margin-right: 4rem;
   }
 
-  .lg\:mt-14 {
-    margin-top: 3.5rem;
-  }
-
   .lg\:mt-12 {
     margin-top: 3rem;
-  }
-
-  .lg\:max-h-\[420px\] {
-    max-height: 420px;
   }
 
   .lg\:max-h-\[400px\] {
     max-height: 400px;
   }
 
-  .lg\:min-h-\[180px\] {
-    min-height: 180px;
+  .lg\:max-h-\[420px\] {
+    max-height: 420px;
   }
 
   .lg\:min-h-\[160px\] {
     min-height: 160px;
   }
 
-  .lg\:w-\[320px\] {
-    width: 320px;
+  .lg\:min-h-\[180px\] {
+    min-height: 180px;
   }
 
   .lg\:w-\[300px\] {
     width: 300px;
   }
 
-  .lg\:gap-14 {
-    gap: 3.5rem;
+  .lg\:w-\[320px\] {
+    width: 320px;
   }
 
   .lg\:gap-12 {
