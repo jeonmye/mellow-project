@@ -64,11 +64,11 @@ const NavBar = () => {
 
 const MobileHeader = () => (
   <div className="sticky top-0 bg-white">
-    <div className="flex justify-between mr-7 items-center px-5 py-3">
-      <Logo size={'m'} />
-      <div onClick={() => null} className="cursor-pointer">
+    <div className="flex justify-center  items-center py-3">
+      <Logo size={'m'} goHome={true} />
+      {/* <div className="cursor-pointer">
         <FiMenu size="25" color="#464C53" />
-      </div>
+      </div> */}
     </div>
     <div className="w-full border-b-[1px] border-gray-100"></div>
   </div>
