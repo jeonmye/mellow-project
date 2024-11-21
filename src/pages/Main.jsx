@@ -18,10 +18,10 @@ const Main = () => {
   const threeArrayThumbnailData = splitArrayIntoThree(data);
   return (
     <div className="w-full">
-      <div className="w-full h-[600px] overflow-hidden relative p-10 md:p-0">
+      <div className="w-full h-[380px] md:h-[600px] overflow-hidden relative p-8 md:p-0">
         <img src={sampleBanner} alt="배너" className="w-full h-full object-cover" />
         <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-h1-bold text-white mx-auto text-h3-bold md:text-h2-bold lg:text-h1-bold">
-          KOICA by MELLOW
+          by MELLOW
         </span>
       </div>
       <div className="flex justify-center w-full gap-20 mt-20">

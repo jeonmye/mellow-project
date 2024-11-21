@@ -8,7 +8,6 @@ dotenv.config();
 
 module.exports = {
   devServer: {
-    historyApiFallback: true,
     static: {
       directory: path.join(__dirname, 'public'),
     },
@@ -18,9 +17,16 @@ module.exports = {
     hot: true,
   },
   entry: './src/index.jsx',
-  mode: 'development',
+  mode: 'production',
+  devtool: false,
   resolve: {
     extensions: ['.js', '.jsx'],
+  },
+  cache: {
+    type: 'filesystem',
+    buildDependencies: {
+      config: [__filename],
+    },
   },
   module: {
     rules: [
@@ -34,35 +40,36 @@ module.exports = {
           },
         },
       },
-      {
-        test: /\.(mov|mp4)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-            },
-          },
-        ],
-      },
+      // {
+      //   test: /\.(mov|mp4)$/,
+      //   use: [
+      //     {
+      //       loader: 'file-loader',
+      //       options: {
+      //         name: '[name].[ext]',
+      //       },
+      //     },
+      //   ],
+      // },
       {
         test: /\.(jpg|jpeg|gif|png|svg|eot|woff|ttf)$/i,
         type: 'asset/resource',
       },
       {
         test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'postcss-loader', // Tailwind를 처리하기 위해 추가
-        ],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif|webp)$/i,
+        loader: 'image-webpack-loader',
+        enforce: 'pre',
       },
     ],
   },
   output: {
     publicPath: '/',
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     clean: true,
     assetModuleFilename: 'asset/[hash][ext][query]',
   },
@@ -70,14 +77,14 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: './public/index.html',
       filename: './index.html',
-      env: process.env,
     }),
-    new CopyPlugin({
-      patterns: [{ from: 'src/assets', to: 'assets' }],
-    }),
+
     new MiniCssExtractPlugin(),
     new webpack.DefinePlugin({
-      'process.env': JSON.stringify(process.env),
+      'process.env.NODE_ENV': JSON.stringify('production'),
     }),
   ],
+  performance: {
+    hints: false, // 번들 사이즈 제한 경고 제거
+  },
 };

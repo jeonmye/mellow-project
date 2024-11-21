@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmellow_project=self.webpackChunkmellow_project||[]).push([[594],{8594:(e,n,t)=>{t.r(n),t.d(n,{default:()=>r});var l=t(6540);const r=function(){return l.createElement(l.Fragment,null,"BrandDesign")}}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmellow_project=self.webpackChunkmellow_project||[]).push([[786],{7786:(e,t,r)=>{r.r(t),r.d(t,{default:()=>c});var l=r(6540);const c=function(){return l.createElement(l.Fragment,null,"Character")}}}]);

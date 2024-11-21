@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmellow_project=self.webpackChunkmellow_project||[]).push([[429],{4429:(e,t,l)=>{l.r(t),l.d(t,{default:()=>r});var n=l(6540);const r=function(){return n.createElement(n.Fragment,null,"NewMedia")}}}]);
