@@ -8,9 +8,10 @@ import { mockData } from '../constant/portfolioData';
 const Main = () => {
   const { width, isMobile, isDesktop } = useViewport();
   const [portfolioData, setPortfolioData] = useState(mockData);
+
   useEffect(() => {
     if (portfolioData) {
-      console.log(true);
+      // 데이터를 이용한 추가 작업이 필요한 경우 여기에 작성
     }
   }, [portfolioData]);
 
@@ -32,6 +33,7 @@ const Main = () => {
 
   const threeArrayThumbnailData = splitArrayIntoThree(portfolioData);
   const twoArrayThumbnailData = splitArrayIntoTwo(portfolioData);
+
   return (
     <div className="w-full px-6 md:p-0 lg:p-0 xl:p-0">
       <div className="w-full h-[380px] md:h-[600px] overflow-hidden relative py-8 md:p-0">
@@ -40,23 +42,27 @@ const Main = () => {
           by MELLOW
         </span>
       </div>
-      <div className="flex justify-center gap-10 mt-10 w-full lg:gap-12 lg:mt-12 xl:gap-16 xl:mt-16">
+      <div className="flex justify-center gap-10 mt-4 w-full lg:gap-10 lg:mt-10 xl:gap-10 xl:mt-10">
         {!isDesktop &&
           threeArrayThumbnailData?.map((datas, index) => (
-            <div key={index} className="min-h-screen flex flex-col">
+            <div key={index} className="min-h-screen flex flex-col items-center gap-16">
               {datas.map((item, idx) => {
                 return (
-                  <Link to={`/brand-movie/${item.id}`} key={item.id} className="group">
-                    <div className="relative flex flex-col w-[280px] max-h-[380px] min-h-[150px] overflow-hidden xl:w-[320px] xl:max-h-[420px] xl:min-h-[180px] lg:w-[300px] lg:max-h-[400px] lg:min-h-[160px]">
-                      <img src={item.thumbnail} className="object-cover w-full h-full" />
+                  <Link
+                    to={`/brand-movie/${item.id}`}
+                    key={item.id}
+                    className="group w-[280px] xl:w-[320px] lg:w-[300px]"
+                  >
+                    <div className="relative w-full max-h-[380px] min-h-[150px] overflow-hidden xl:max-h-[420px] xl:min-h-[180px] lg:max-h-[400px] lg:min-h-[160px]">
+                      <img src={item.listThumbnail} className="object-cover w-full h-full" alt={item.title} />
                       <div className="absolute inset-0 bg-gray-800 opacity-0 group-hover:opacity-60 transition duration-300 ease-in-out"></div>
                       <span className="absolute inset-0 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out text-h4-bold tracking-wider">
                         VIEW POST →
                       </span>
                     </div>
-                    <div className="flex my-10 justify-center">
-                      <span className="text-h4-bold text-pretty">{item.title}</span>
-                    </div>
+                    <span className="w-full whitespace-normal text-h3-bold text-center block mt-10 text-gray600 tracking-tighter">
+                      {item.title}
+                    </span>
                   </Link>
                 );
               })}
@@ -66,20 +72,25 @@ const Main = () => {
         {!isMobile &&
           isDesktop &&
           twoArrayThumbnailData?.map((datas, index) => (
-            <div key={index} className="min-h-screen flex flex-col">
+            <div key={index} className="min-h-screen flex flex-col items-center gap-16">
               {datas.map((item, idx) => {
                 return (
-                  <Link to={`/brand-movie/${item.id}`} key={item.id} className="group">
-                    <div className="relative flex flex-col w-[280px] max-h-[380px] min-h-[150px] overflow-hidden lg:w-[320px] lg:max-h-[420px] lg:min-h-[180px]">
-                      <img src={item.thumbnail} className="object-cover w-full h-full" />
+                  <Link
+                    to={`/brand-movie/${item.id}`}
+                    key={item.id}
+                    className="group w-[280px] xl:w-[320px] lg:w-[300px]"
+                  >
+                    <div className="relative w-full max-h-[380px] min-h-[150px] overflow-hidden xl:max-h-[420px] xl:min-h-[180px] lg:max-h-[400px] lg:min-h-[160px]">
+                      <img src={item.listThumbnail} className="object-cover w-full h-full" alt={item.title} />
                       <div className="absolute inset-0 bg-gray-800 opacity-0 group-hover:opacity-60 transition duration-300 ease-in-out"></div>
                       <span className="absolute inset-0 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out text-h4-bold tracking-wider">
                         VIEW POST →
                       </span>
                     </div>
-                    <div className="flex my-10 justify-center">
-                      <span className="text-h4-bold text-pretty text-title-bold">{item.title}</span>
-                    </div>
+
+                    <span className="w-full whitespace-normal text-h4-bold text-center block  mt-10 text-gray600 tracking-tighter">
+                      {item.title}
+                    </span>
                   </Link>
                 );
               })}
@@ -87,20 +98,20 @@ const Main = () => {
           ))}
 
         {isMobile && (
-          <div className="min-h-screen flex flex-col">
+          <div className="min-h-screen flex flex-col items-center gap-14">
             {portfolioData?.map((item, idx) => {
               return (
                 <Link to={`/brand-movie/${item.id}`} key={item.id} className="group">
                   <div className="relative flex flex-col w-full">
-                    <img src={item.thumbnail} className="object-cover w-full h-full" />
+                    <img src={item.listThumbnail} className="object-cover w-full h-full" alt={item.title} />
                     <div className="absolute inset-0 bg-gray-800 opacity-0 group-hover:opacity-60 transition duration-300 ease-in-out"></div>
                     <span className="absolute inset-0 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out text-h4-bold tracking-wider">
                       VIEW POST →
                     </span>
                   </div>
-                  <div className="flex my-10 justify-center">
-                    <span className="text-h4-bold text-pretty text-title-bold">{item.title}</span>
-                  </div>
+                  <span className="w-full whitespace-normal text-h3-bold text-center block mt-10 text-gray600 tracking-tighter px-3">
+                    {item.title}
+                  </span>
                 </Link>
               );
             })}
